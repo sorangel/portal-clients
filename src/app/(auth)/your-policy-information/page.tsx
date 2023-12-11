@@ -18,7 +18,7 @@ export default function YourPolicyInformationPage({
   const { isFetched, isLoading, user, policy } = useSelector(selectReport);
 
   return (
-    <Suspense  fallback={<PageSkeleton />}>
+    <Suspense fallback={<PageSkeleton />}>
       <main className="p-10 flex-1 flex flex-col justify-center w-full items-center">
         {!isFetched && <ReportNumberForm />}
         {isFetched &&
@@ -44,13 +44,13 @@ export default function YourPolicyInformationPage({
               <div className="flex felx-col justify-center items-center mb-6">
                 <div className="flex flex-row flex-nowrap justify-end items-center md:w-2/4">
                   <label
-                    className="block text-slate-700 dark:text-slate-50 font-bold mb-1 md:mb-0 pr-4"
+                    className="mt-0.5 block text-slate-700 dark:text-slate-50 font-bold pr-4"
                     htmlFor="inline-full-name"
                   >
                     Aseguradora:
                   </label>
                 </div>
-                <div className="w-full">
+                <div className="w-full flex justify-center items-center">
                   <input
                     disabled
                     className="w-full py-2 px-4 text-slate-700 dark:text-slate-50 leading-tight dark:bg-slate-900 rounded-lg"
@@ -63,13 +63,13 @@ export default function YourPolicyInformationPage({
               <div className="flex felx-col justify-center items-center mb-6">
                 <div className="flex flex-row flex-nowrap justify-end items-center md:w-2/4">
                   <label
-                    className="block text-slate-700 dark:text-slate-50 font-bold mb-1 md:mb-0 pr-4"
+                    className="mt-0.5 block text-slate-700 dark:text-slate-50 font-bold pr-4"
                     htmlFor="inline-full-name"
                   >
-                      Número de póliza:
+                    Número de póliza:
                   </label>
                 </div>
-                <div className="w-full">
+                <div className="w-full flex justify-center items-center">
                   <input
                     disabled
                     className="w-full py-2 px-4 text-slate-700 dark:text-slate-50 leading-tight dark:bg-slate-900 rounded-lg"
@@ -79,9 +79,9 @@ export default function YourPolicyInformationPage({
                   />
                 </div>
               </div>
-              <div className="mb-6 grid grid-cols-3 gap-1">
+              <div className="grid grid-cols-3 gap-1 p-2">
                 <div className="flex flex-row items-start justify-end">
-                  <span className="block text-slate-700 dark:text-slate-50 font-bold mb-1 md:mb-0 pr-4 mt-1">
+                  <span className="mt-0.5 block text-slate-700 dark:text-slate-50 font-bold pr-4">
                     Cobertura:
                   </span>
                 </div>
@@ -89,7 +89,7 @@ export default function YourPolicyInformationPage({
                   {policy.coverages.map(({ name }, index) => (
                     <div
                       key={`coverage-${name}`}
-                      className="flex flex-row flex-nowrap justify-center items-center gap-2 p-2"
+                      className="flex flex-row flex-nowrap justify-center items-center gap-2"
                     >
                       <span className="flex-1 w-max text-slate-700 dark:text-slate-50">
                         {`Cobertura ${
@@ -100,25 +100,25 @@ export default function YourPolicyInformationPage({
                       <div className="flex flex-row justify-center items-center gap-1">
                         <Link
                           href="/"
-                          className="text-blue-500 flex justify-center items-center mr-2 transition-all ease-in-out duration-300 hover:text-white hover:p-1.5 hover:bg-sky-400 hover:rounded-2xl"
+                          className="w-7 h-7 text-indigo-400 hover:text-indigo-500 transition-all ease-in-out duration-150 flex justify-center items-center text-lg hover:text-2xl"
                         >
-                          <FaSheetPlastic className="text-lg" />
+                          <FaSheetPlastic className="" />
                         </Link>
 
                         <Link
                           href="/"
-                          className="text-blue-500 flex justify-center items-center transition-all ease-in-out duration-300 hover:text-white hover:p-1.5 hover:bg-sky-400 hover:rounded-2xl"
+                          className="w-7 h-7 text-indigo-400 hover:text-indigo-500 transition-all ease-in-out duration-150 flex justify-center items-center text-lg hover:text-2xl"
                         >
-                          <BsRobot className="text-lg" />
+                          <BsRobot className="" />
                         </Link>
                       </div>
                     </div>
                   ))}
                 </div>
               </div>
-              <div className="mb-6 grid grid-cols-3 gap-1">
+              <div className="grid grid-cols-3 gap-1 p-2">
                 <div className="flex flex-row flex-nowrap items-start justify-end">
-                  <span className="block text-slate-700 dark:text-slate-50 font-bold mb-1 md:mb-0 pr-4 mt-1">
+                  <span className="mt-0.5 block text-slate-700 dark:text-slate-50 font-bold pr-4">
                     Deducible:
                   </span>
                 </div>
